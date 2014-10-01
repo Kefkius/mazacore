@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<script src="../../browser/bundle.js"></script>
+	<pre id="content"></pre>
+	<script>
+		var print = function (s,s2,s3) {
+			var div = document.getElementById('content');
+			div.innerHTML += s + (s2||'') + (s3||'') + '<br />';
+        };
+        
+		var mazacore = require('mazacore');
+//		var crypto = require('crypto');
+		var HierarchicalKey = mazacore.HierarchicalKey;
+		var coinUtil = mazacore.util;
+		var Address = mazacore.Address;
+		
+		
+		var wordSeed = 'the quick brown fox the quick brown fox the quick brown'
+		var keySeed = coinUtil.sha256(wordSeed);
+		var hkey = HierarchicalKey.seed(keySeed);
+		
+		print('<h1>Hierarchical Deterministic Keys</h1>');
+		print('Your first subtree (m/0) should be hardened (m/0\'). If you are unfamiliar with what hardened keys are, please research this. It is a very important part of HD keys.');
+		print('When using the derive() function, the hardened key identifier is an escaped apostrophe (\\\').');
+		print('<hr>');
+		print('<br>');
+		print('master key seed: ' + wordSeed);
+		print('master extended private key: ' + hkey.extendedPrivateKeyString());
+		print('master extended public key: ' + hkey.extendedPublicKeyString());
+		print('master addy: ' + Address.fromPubKey(hkey.eckey.public).toString())
+		print('<br>');
+		print('<hr>');
+		print('m/0\' extended private key: ' + hkey.derive('m/0\'').extendedPrivateKeyString());
+		print('m/0\' extended public key: ' +hkey.derive('m/0\'').extendedPublicKeyString());
+		print('<br>');
+		print('m/0\'/0 extended private key: ' + hkey.derive('m/0\'/0').extendedPrivateKeyString());
+		print('m/0\'/0 extended public key: ' + hkey.derive('m/0\'/0').extendedPublicKeyString());
+		print('m/0\'/0 address: ' + Address.fromPubKey(hkey.derive('m/0\'/0').eckey.public).toString());
+
+		print('m/0\'/1 extended private key: ' + hkey.derive('m/0\'/1').extendedPrivateKeyString());
+		print('m/0\'/1 extended public key: ' + hkey.derive('m/0\'/1').extendedPublicKeyString());
+		print('m/0\'/1 address: ' + Address.fromPubKey(hkey.derive('m/0\'/1').eckey.public).toString());
+		
+		console.log = print;
+	</script>
+</body>
+</html>
