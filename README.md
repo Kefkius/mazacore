@@ -25,7 +25,7 @@ npm install bitcore
 It is a collection of objects useful to bitcoin applications; class-like idioms are enabled via [Soop](https://github.com/bitpay/soop). In most cases, a developer will require the object's class directly. For instance:
 
 ```javascript
-var bitcore = require('bitcore');
+var bitcore = require('mazacore');
 var Address = bitcore.Address;
 var Transaction = bitcore.Transaction;
 var PeerManager = bitcore.PeerManager;
@@ -76,7 +76,7 @@ From example/simple.html
   <body>
     <script src="../browser/bundle.js"></script>
     <script>
-      var bitcore = require('bitcore');
+      var bitcore = require('mazacore');
       var Address = bitcore.Address;
       var a = new Address('1KerhGhLn3SYBEQwby7VyVMWf16fXQUj5d');
       console.log('1KerhGhLn3SYBEQwby7VyVMWf16fXQUj5d is valid? '+a.isValid());
