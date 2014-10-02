@@ -44,10 +44,10 @@
     "currency",
     "virtual"
   ],
-  "main": "bitcore.js",
+  "main": "mazacore.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mazacoin/mazacore.git"
+    "url": "https://github.com/kefkius/mazacore.git#build-name"
   },
   "scripts": {
     "install": "node-gyp rebuild",
