@@ -73,7 +73,7 @@
     "preconditions": "^1.0.7",
     "protobufjs": "=3.0.0",
     "sjcl": "=1.0.1",
-    "groestlhash": "git://github.com/GroestlCoin/node-groestl-hash.git",
+    "groestlhash": "https://github.com/GroestlCoin/node-groestl-hash",
     "socks5-client": "~0.3.6"
   },
   "testling": {
