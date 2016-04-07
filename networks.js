@@ -6,15 +6,15 @@ var hex = function(hex) {
 
 exports.livenet = {
   name: 'livenet',
-  magic: hex('f9beb4d9'),
-  addressVersion: 0x00,
-  privKeyVersion: 128,
+  magic: hex('f9beb4d4'),
+  addressVersion: 0x24,
+  privKeyVersion: 164,
   P2SHVersion: 5,
   hkeyPublicVersion: 0x0488b21e,
   hkeyPrivateVersion: 0x0488ade4,
   genesisBlock: {
-    hash: hex('6FE28C0AB6F1B372C1A6A246AE63F74F931E8365E15A089C68D6190000000000'),
-    merkle_root: hex('3BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA4B1E5E4A'),
+    hash: hex('2390633b70f062cb3a3d6814b67e29a80d9d7581db0bcc494d597c92c50a0000'),
+    merkle_root: hex('bb2866aaca46c4428ad08b57bc9d1493abaf64724b6c3052a7c8f959df68e93c'),
     height: 0,
     nonce: 2083236893,
     version: 1,
@@ -30,7 +30,7 @@ exports.livenet = {
     'seed.bitnodes.io',
     'bitseed.xf2.org'
   ],
-  defaultClientPort: 8333
+  defaultClientPort: 1331
 };
 
 exports.mainnet = exports.livenet;
