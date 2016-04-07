@@ -2,7 +2,7 @@ var crypto = require('crypto');
 var bignum = require('bignum');
 var Binary = require('binary');
 var Put = require('bufferput');
-var groestl = require('groestlhash');
+var groestl = require('node-groestl-hash');
 var buffertools = require('buffertools');
 var sjcl = require('../lib/sjcl');
 if (process.browser) {
