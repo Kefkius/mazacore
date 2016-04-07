@@ -2,7 +2,7 @@ var crypto = require('crypto');
 var bignum = require('bignum');
 var Binary = require('binary');
 var Put = require('bufferput');
-var groestl = require('node-groestl-hash');
+var groestlhash = require('node-groestl-hash');
 var buffertools = require('buffertools');
 var sjcl = require('../lib/sjcl');
 if (process.browser) {
@@ -10,7 +10,7 @@ if (process.browser) {
 }
 
 exports.groestl = function(data) {
-    return groestl.digest(data);
+    return groestlhash.digest(data);
 };
 var sha256 = exports.sha256 = function(data) {
   return new Buffer(crypto.createHash('sha256').update(data).digest('binary'), 'binary');
